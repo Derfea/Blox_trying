@@ -1,0 +1,26 @@
+{% extends "layouts/main.html" %}
+
+{% block content %}
+
+    {% if name != None: %}
+        {% if age != None: %}
+            <h1>My name is: {{name}}</h1>
+            <h1>My age is: {{age}}</h1>
+        {% endif %}
+    {% endif %}
+    <form method="get">
+        <label for="name">Name:</label>
+        <input type="text" name="name" id="name" value="{% if name != None: %}{{name}}{% endif %}">
+        <label for="name">Age:</label>
+        <input type="text" name="age" id="age" value="{% if age != None: %}{{age}}{% endif %}">
+        <br/>
+        <h3><a href="http://localhost:5000/"><input type="submit" value="Login"></a></h3>
+        <input type="submit" value="Login">
+            </form>
+
+<h3><a href="http://localhost:5000/"><input type="submit" value="Login"></a></h3>
+<h3><a href="http://localhost:5000/Profile">Profile Web</a></h3>
+
+
+
+{% endblock %}
