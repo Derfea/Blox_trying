@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 
 app = Flask(__name__)
 
@@ -6,11 +6,15 @@ app = Flask(__name__)
 def hello():
     return render_template("Home_Page.html")
 
-@app.route("/Login")
+@app.route("/login")
 def login():
-    args = request.args
-    age = args.get("age")
-    name = args.get("name")
+    return render_template("LOgin.html")
 
-    return render_template("LOgin.html", name = name, age = age)
+@app.route("/signup")
+def signup():
+    return render_template("Signup.html")
+
+@app.route("/downloads")
+def download():
+    return render_template("Download.html")
 
